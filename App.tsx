@@ -1,14 +1,13 @@
-import React, {Component} from 'react';
-import {Text, View} from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
+import {View, Text} from 'react-native';
+import React from 'react';
 import StyleSheet from './src/style_sheet/index';
 
-export default class App extends Component {
-  render() {
-    return (
-      <View>
-        <Text> textInComponent </Text>
-        <StyleSheet />
-      </View>
-    );
-  }
+export default function App() {
+  return (
+    <View>
+      <Text style={{paddingTop: 100}}> textInComponent </Text>
+      <StyleSheet />
+    </View>
+  );
 }
