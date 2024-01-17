@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, Text, View, Dimensions} from 'react-native';
 import React from 'react';
 
 function TextField(props) {
@@ -6,35 +6,36 @@ function TextField(props) {
   return (
     <View style={[textFieldStyles.felx]}>
       <Text>
-        Flex-{val}-{name}
+        {name}-{val}
       </Text>
     </View>
   );
 }
 
-const FlexDirection = () => {
+function FlexDefault(props) {
   return (
     <View>
-      <View>
-        <View>
-          <Text>Flex</Text>
-          <View style={[styles.felx]}>
-            {Array(10)
-              .fill(20)
-              .map((item, i) => (
-                <TextField name="John" val={i} />
-              ))}
-          </View>
-        </View>
+      <Text style={styles.h1}>FlexDirection</Text>
+      <View style={[props.viewStyle]}>
+        {Array(8)
+          .fill(20)
+          .map((item, i) => (
+            <TextField name={props.title} val={i} />
+          ))}
       </View>
     </View>
   );
-};
+}
 
 function Flex() {
   return (
     <View>
-      <FlexDirection />
+      <ScrollView>
+        <FlexDefault viewStyle={styles.felx} title="FlexDefault" />
+        <FlexDefault viewStyle={styles.felxDirection} title="column-reverse" />
+        <FlexDefault viewStyle={styles.row} title="row" />
+        <FlexDefault viewStyle={styles.rowReverse} title="rowReverse" />
+      </ScrollView>
     </View>
   );
 }
@@ -43,8 +44,25 @@ export default Flex;
 
 const styles = StyleSheet.create({
   felx: {
+    display: 'flex',
+  },
+  felxDirection: {
+    flexDirection: 'column-reverse',
+    flexWrap: 'wrap',
+  },
+  row: {
     flexDirection: 'row',
     flexWrap: 'wrap',
+  },
+  rowReverse: {
+    flexDirection: 'row-reverse',
+    flexWrap: 'wrap',
+  },
+  h1: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+    fontWeight: 'bold',
   },
 });
 
@@ -55,5 +73,7 @@ const textFieldStyles = StyleSheet.create({
     borderRadius: 4,
     padding: 2,
     margin: 3,
+    width: 375,
+    // width: Dimensions.get('window').width,
   },
 });
