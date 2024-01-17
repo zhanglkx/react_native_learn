@@ -5,19 +5,8 @@ import * as React from 'react';
 import {View, Text, Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomeScreen from './src/HomeScreen/HomeScreen';
-
-function DetailsScreen({navigation}) {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Details Screen</Text>
-      <Button
-        title="Go to Details... again"
-        onPress={() => navigation.navigate('Details')}
-      />
-    </View>
-  );
-}
+import HomeScreen from './src/Navigator/HomeScreen/HomeScreen';
+import DetailsScreen from './src/Navigator/DetailsScreen/DetailsScreen';
 
 const Stack = createNativeStackNavigator();
 
