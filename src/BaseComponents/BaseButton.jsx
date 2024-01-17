@@ -7,7 +7,7 @@ export default function BaseButton() {
       <Button
         title="原生组件按钮"
         onPress={() => {
-          alert('这是一个按钮');
+          Alert.alert('这是一个按钮');
         }}
       />
 

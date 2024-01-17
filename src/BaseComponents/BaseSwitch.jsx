@@ -27,4 +27,4 @@ const BaseSwitch = () => {
 
 export default BaseSwitch;
 
-const styles = StyleSheet.create({});
+// const styles = StyleSheet.create({});

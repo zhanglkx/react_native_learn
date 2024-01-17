@@ -5,7 +5,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 // import FlexDirection from './src/FlexBox/FlexDirection';
 // import BaseButton from './src//BaseComponents/BaseButton';
 // import BaseSwitch from './src//BaseComponents/BaseSwitch';
-import BaseActivityIndicator from './src/BaseComponents/BaseActivityIndicator';
+// import BaseActivityIndicator from './src/BaseComponents/BaseActivityIndicator';
+import BaseImage from './src/BaseComponents/BaseImage';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,10 +15,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         {/* <Stack.Screen name="FlexDirection" component={FlexDirection} /> */}
-        <Stack.Screen
-          name="BaseActivityIndicator"
-          component={BaseActivityIndicator}
-        />
+        <Stack.Screen name="BaseActivityIndicator" component={BaseImage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
