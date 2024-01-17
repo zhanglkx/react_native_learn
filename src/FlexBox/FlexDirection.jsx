@@ -73,7 +73,7 @@ const textFieldStyles = StyleSheet.create({
     borderRadius: 4,
     padding: 2,
     margin: 3,
-    width: 375,
-    // width: Dimensions.get('window').width,
+    // width: 375,
+    width: Dimensions.get('window').width / 4 - 15,
   },
 });
