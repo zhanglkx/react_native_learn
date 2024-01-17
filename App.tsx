@@ -19,7 +19,11 @@ function App() {
           component={HomeScreen}
           options={{title: 'Overview'}}
         />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen
+          name="Details"
+          component={DetailsScreen}
+          initialParams={{itemId: 42, otherParam: 'itemId'}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
