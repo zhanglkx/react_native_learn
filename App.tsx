@@ -1,67 +1,20 @@
+/* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
-import {Button, View, Text} from 'react-native';
+// import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import FlexDirection from './src/FlexBox/FlexDirection';
 
-function SettingsScreen({route, navigation}) {
-  const {user} = route.params;
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Settings Screen</Text>
-      <Text>userParam: {JSON.stringify(user)}</Text>
-      <Button
-        title="Go to Profile"
-        onPress={() => navigation.navigate('Profile')}
-      />
-    </View>
-  );
-}
-
-function ProfileScreen({navigation}) {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Profile Screen</Text>
-    </View>
-  );
-}
-
-function HomeScreen({navigation}) {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Settings"
-        onPress={() =>
-          navigation.navigate('Root', {
-            screen: 'Settings',
-            params: {user: 'jane'},
-          })
-        }
-      />
-    </View>
-  );
-}
-
-const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
 
-function Root() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Profile" component={ProfileScreen} />
-      <Stack.Screen name="Settings" component={SettingsScreen} />
-    </Stack.Navigator>
-  );
-}
-
-export default function App() {
+function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Root" useLegacyImplementation>
-        <Drawer.Screen name="Root" component={Root} />
-        <Drawer.Screen name="Home" component={HomeScreen} />
-      </Drawer.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name="FlexDirection" component={FlexDirection} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+export default App;
