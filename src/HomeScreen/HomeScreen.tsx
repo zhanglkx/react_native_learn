@@ -14,5 +14,3 @@ export default function HomeScreen({navigation}) {
     </View>
   );
 }
-
-// ... other code from the previous section
