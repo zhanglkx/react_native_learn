@@ -1,4 +1,4 @@
-import {StatusBar, StyleSheet, Switch, Text, View} from 'react-native';
+import {StatusBar, Switch, Text, View} from 'react-native';
 import React, {useState} from 'react';
 // import {Switch} from 'react-native-paper';
 
