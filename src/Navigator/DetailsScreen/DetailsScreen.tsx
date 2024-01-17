@@ -7,7 +7,7 @@ export default function DetailsScreen({navigation}) {
       <Text>Details Screen</Text>
       <Button
         title="Go to Details... again"
-        onPress={() => navigation.navigate('Details')}
+        onPress={() => navigation.push('Details')}
       />
     </View>
   );
