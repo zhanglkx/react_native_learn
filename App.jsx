@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
-import {Button, View, Text} from 'react-native';
+import {Button, View, Text, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -28,13 +28,17 @@ function Help({navigation}) {
 }
 
 function EmptyScreen() {
-  return <View />;
+  return (
+    <View style={styles.container}>
+      <Text style={styles.centeredText}>这是一段居中的文字。</Text>
+    </View>
+  );
 }
 
 const Stack = createNativeStackNavigator();
 
 function App() {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
 
   return (
     <NavigationContainer>
@@ -62,4 +66,20 @@ function App() {
   );
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  centeredText: {
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
+    borderBlockColor: 'red',
+    borderWidth: 1,
+    color: 'red',
+    // height: 200,
+  },
+});
 export default App;
