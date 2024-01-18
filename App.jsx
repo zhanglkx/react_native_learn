@@ -1,9 +1,8 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-alert */
 /* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
 import {Button, View, Text} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, useFocusEffect} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
@@ -20,18 +19,16 @@ function SettingsScreen({navigation}) {
 }
 
 function ProfileScreen({navigation}) {
-  React.useEffect(
-    () =>
-      navigation.addListener('focus', () => alert('ProfileScreen was focused')),
-    [],
-  );
-
-  React.useEffect(
-    () =>
-      navigation.addListener('blur', () =>
-        alert('ProfileScreen was unfocused'),
-      ),
-    [],
+  useFocusEffect(
+    React.useCallback(() => {
+      alert('Screen was focused');
+      // Do something when the screen is focused
+      return () => {
+        alert('Screen was unfocused');
+        // Do something when the screen is unfocused
+        // Useful for cleanup functions
+      };
+    }, []),
   );
 
   return (
