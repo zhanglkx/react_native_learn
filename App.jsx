@@ -8,6 +8,7 @@ function Home({navigation}) {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>Home Screen</Text>
+      {/* 在不同的Stack.Group 之间跳转，实际上等同于 iOS 在不同的导航控制器之间跳转 */}
       <Button onPress={() => navigation.navigate('Help')} title="Go to Help" />
       <Button
         onPress={() => navigation.navigate('Profile')}
@@ -35,11 +36,8 @@ function EmptyScreen() {
   );
 }
 
-const Stack = createNativeStackNavigator();
-
-function App() {
-  const isLoggedIn = false;
-
+function Nav() {
+  const isLoggedIn = true;
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -64,6 +62,13 @@ function App() {
       </Stack.Navigator>
     </NavigationContainer>
   );
+}
+
+const Stack = createNativeStackNavigator();
+
+function App() {
+  const isLoggedIn = true;
+  return <Nav />;
 }
 
 const styles = StyleSheet.create({
