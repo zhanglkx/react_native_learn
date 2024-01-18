@@ -1,71 +1,36 @@
-/* eslint-disable no-alert */
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
-import {Button, View, Text} from 'react-native';
+import {Button, View} from 'react-native';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-function Feed({navigation}) {
+function HomeScreen({navigation}) {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Feed Screen</Text>
       <Button
-        onPress={() => navigation.navigate('Messages')}
-        title="Go to Messages"
+        onPress={() => navigation.navigate('Notifications')}
+        title="Go to notifications"
       />
     </View>
   );
 }
 
-function Messages({navigation}) {
-  React.useEffect(() => {
-    const unsubscribe = navigation.getParent().addListener('tabPress', e => {
-      // Do something
-      alert('Tab pressed!');
-    });
-
-    return unsubscribe;
-  }, []);
-
+function NotificationsScreen({navigation}) {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Messages Screen</Text>
-      <Button onPress={() => navigation.navigate('Feed')} title="Go to Feed" />
+      <Button onPress={() => navigation.goBack()} title="Go back home" />
     </View>
   );
 }
 
-function Profile() {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Profile Screen</Text>
-    </View>
-  );
-}
+const Drawer = createDrawerNavigator();
 
-const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator();
-
-function Home() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Feed" component={Feed} />
-      <Stack.Screen name="Messages" component={Messages} />
-    </Stack.Navigator>
-  );
-}
-
-function App() {
+export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator id="RootNavigator">
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Profile" component={Profile} />
-      </Tab.Navigator>
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
-
-export default App;
