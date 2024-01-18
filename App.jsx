@@ -1,36 +1,57 @@
 import * as React from 'react';
-import {Button, View} from 'react-native';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import {NavigationContainer} from '@react-navigation/native';
+import { Button, View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
-function HomeScreen({navigation}) {
+function EmptyScreen() {
+  return <View />;
+}
+
+function Feed({ navigation }) {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Feed Screen</Text>
+      <Button title="Go to Root" onPress={() => navigation.navigate('Root')} />
       <Button
-        onPress={() => navigation.navigate('Notifications')}
-        title="Go to notifications"
+        title="Go to Root, Profile"
+        onPress={() => navigation.navigate('Root', { screen: 'Profile' })}
       />
     </View>
   );
 }
 
-function NotificationsScreen({navigation}) {
+function Home({ navigation }) {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <Button title="Go to Feed" onPress={() => navigation.navigate('Feed')} />
     </View>
   );
 }
 
 const Drawer = createDrawerNavigator();
+const Stack = createNativeStackNavigator();
 
-export default function App() {
+function Root() {
+  return (
+    <Drawer.Navigator >
+      <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Screen name="Profile" component={EmptyScreen} />
+      <Stack.Screen name="Settings" component={EmptyScreen} />
+    </Drawer.Navigator>
+  );
+}
+
+function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={HomeScreen} />
-        <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-      </Drawer.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name="Root" component={Root} />
+        <Stack.Screen name="Feed" component={Feed} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+export default App;
