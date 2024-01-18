@@ -1,77 +1,71 @@
+/* eslint-disable no-alert */
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-native/no-inline-styles */
-/* eslint-disable react/no-unstable-nested-components */
 import * as React from 'react';
-import {View, Text, Image, Button, StyleSheet} from 'react-native';
+import {Button, View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-function HomeScreen() {
+function Feed({navigation}) {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-}
-
-function LogoTitle() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-around',
-        margin: 0,
-        padding: 0,
-      }}>
-      <Button title="左侧导航栏" style={styles.lefyStyle} />
-
-      <Image
-        style={styles.centerStyle}
-        source={require('./src/assets/images/elk.png')}
+      <Text>Feed Screen</Text>
+      <Button
+        onPress={() => navigation.navigate('Messages')}
+        title="Go to Messages"
       />
-      <Button title="左侧导航栏" style={{fontSize: 20}} />
     </View>
   );
 }
 
+function Messages({navigation}) {
+  React.useEffect(() => {
+    const unsubscribe = navigation.getParent().addListener('tabPress', e => {
+      // Do something
+      alert('Tab pressed!');
+    });
+
+    return unsubscribe;
+  }, []);
+
+  return (
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text>Messages Screen</Text>
+      <Button onPress={() => navigation.navigate('Feed')} title="Go to Feed" />
+    </View>
+  );
+}
+
+function Profile() {
+  return (
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text>Profile Screen</Text>
+    </View>
+  );
+}
+
+const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
+
+function Home() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Feed" component={Feed} />
+      <Stack.Screen name="Messages" component={Messages} />
+    </Stack.Navigator>
+  );
+}
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{headerTitle: props => <LogoTitle {...props} />}}
-        />
-      </Stack.Navigator>
+      <Tab.Navigator id="RootNavigator">
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Profile" component={Profile} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  lefyStyle: {
-    textAlign: 'left',
-    fontSize: 20,
-    borderColor: 'red',
-    borderWidth: 1,
-    backgroundColor: 'red',
-  },
-  centerStyle: {
-    textAlign: 'left',
-    fontSize: 20,
-    borderColor: 'red',
-    borderWidth: 1,
-    width: 40,
-    height: 40,
-  },
-  rightStyle: {
-    textAlign: 'left',
-    fontSize: 20,
-    borderColor: 'red',
-    borderWidth: 1,
-  },
-});
 export default App;
