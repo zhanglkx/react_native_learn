@@ -21,12 +21,16 @@ function SettingsScreen({navigation}) {
 
 function ProfileScreen({navigation}) {
   React.useEffect(
-    () => navigation.addListener('focus', () => alert('Screen was focused')),
+    () =>
+      navigation.addListener('focus', () => alert('ProfileScreen was focused')),
     [],
   );
 
   React.useEffect(
-    () => navigation.addListener('blur', () => alert('Screen was unfocused')),
+    () =>
+      navigation.addListener('blur', () =>
+        alert('ProfileScreen was unfocused'),
+      ),
     [],
   );
 
