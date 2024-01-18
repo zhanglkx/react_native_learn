@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
 import {View, Text, Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
@@ -9,20 +8,9 @@ function HomeScreen({navigation}) {
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>Home Screen</Text>
       <Button
-        title="Go to Profile"
-        onPress={() =>
-          navigation.navigate('Profile', {name: '动态自定义 title'})
-        }
+        title="Update the title"
+        onPress={() => navigation.setOptions({title: 'Updated!'})}
       />
-    </View>
-  );
-}
-
-function ProfileScreen({navigation}) {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Profile screen</Text>
-      <Button title="Go back" onPress={() => navigation.goBack()} />
     </View>
   );
 }
@@ -37,11 +25,6 @@ function App() {
           name="Home"
           component={HomeScreen}
           options={{title: 'My home'}}
-        />
-        <Stack.Screen
-          name="Profile"
-          component={ProfileScreen}
-          options={({route}) => ({title: route.params.name})}
         />
       </Stack.Navigator>
     </NavigationContainer>
