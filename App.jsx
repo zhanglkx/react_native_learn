@@ -1,13 +1,31 @@
+/* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
-// import {View, Text} from 'react-native';
+import {View, Text, Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-// import FlexDirection from './src/FlexBox/FlexDirection';
-// import BaseButton from './src//BaseComponents/BaseButton';
-// import BaseSwitch from './src//BaseComponents/BaseSwitch';
-// import BaseActivityIndicator from './src/BaseComponents/BaseActivityIndicator';
-// import BaseImage from './src/BaseComponents/BaseImage';
-import BaseTextInput from './src/BaseComponents/BaseTextInput';
+
+function HomeScreen({navigation}) {
+  return (
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text>Home Screen</Text>
+      <Button
+        title="Go to Profile"
+        onPress={() =>
+          navigation.navigate('Profile', {name: '动态自定义 title'})
+        }
+      />
+    </View>
+  );
+}
+
+function ProfileScreen({navigation}) {
+  return (
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text>Profile screen</Text>
+      <Button title="Go back" onPress={() => navigation.goBack()} />
+    </View>
+  );
+}
 
 const Stack = createNativeStackNavigator();
 
@@ -15,8 +33,16 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen name="FlexDirection" component={FlexDirection} /> */}
-        <Stack.Screen name="BaseActivityIndicator" component={BaseTextInput} />
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{title: 'My home'}}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={({route}) => ({title: route.params.name})}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
