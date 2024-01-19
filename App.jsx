@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/no-unstable-nested-components */
 // You can import Ionicons from @expo/vector-icons if you use Expo or
 // react-native-vector-icons/Ionicons otherwise.
