@@ -23,9 +23,9 @@ const RowGapAndColumnGap = () => {
       rowGap={rowGap}
       handleRowGapChange={setRowGap}>
       <View style={[styles.box, styles.box1]} />
-      <View style={[styles.box, styles.box2]} />
-      <View style={[styles.box, styles.box3]} />
-      <View style={[styles.box, styles.box4]} />
+      <View style={[styles.box, styles.box1]} />
+      <View style={[styles.box, styles.box1]} />
+      <View style={[styles.box, styles.box1]} />
       <View style={[styles.box, {backgroundColor: getRandomColor()}]} />
       <View style={[styles.box, {backgroundColor: getRandomColor()}]} />
       <View style={[styles.box, {backgroundColor: getRandomColor()}]} />
@@ -100,19 +100,7 @@ const styles = StyleSheet.create({
     height: 80,
   },
   box1: {
-    backgroundColor: 'orangered',
-  },
-  box2: {
-    backgroundColor: 'orange',
-  },
-  box3: {
-    backgroundColor: 'mediumseagreen',
-  },
-  box4: {
-    backgroundColor: 'deepskyblue',
-  },
-  box5: {
-    backgroundColor: 'mediumturquoise',
+    backgroundColor: getRandomColor(),
   },
 });
 
