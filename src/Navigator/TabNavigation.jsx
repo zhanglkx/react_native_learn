@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unstable-nested-components */
+/* eslint-disable react-native/no-inline-styles */
 // 用于编写底部导航栏的相关代码
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -8,7 +10,6 @@ import {
   Layout,
   Text,
 } from '@ui-kitten/components';
-import {MaterialIcons} from '@expo/vector-icons';
 
 // screens
 // import AccountScreen from "../screens/Account";
@@ -66,20 +67,9 @@ const BottomTabBar = ({navigation, state}) => (
     onSelect={index => navigation.navigate(state.routeNames[index])}>
     <BottomNavigationTab
       title="Home"
-      icon={props => (
-        <MaterialIcons name="home" size={24} color={props.style.tintColor} />
-      )}
+      icon={props => <Text>Account Screen</Text>}
     />
-    <BottomNavigationTab
-      title="Account"
-      icon={props => (
-        <MaterialIcons
-          name="account-circle"
-          size={24}
-          color={props.style.tintColor}
-        />
-      )}
-    />
+    <BottomNavigationTab title="Account" icon={props => <Text>1111</Text>} />
   </BottomNavigation>
 );
 

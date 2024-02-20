@@ -44,7 +44,7 @@ function LogoTitle() {
         margin: 0,
         padding: 0,
       }}>
-      <Button title="左侧导航栏" style={styles.lefyStyle} />
+      <Button title="左侧导航栏1" style={styles.lefyStyle} />
 
       <Image
         style={styles.centerStyle}
@@ -55,17 +55,43 @@ function LogoTitle() {
   );
 }
 
+function LogoTitle111() {
+  return (
+    <View
+      style={{
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        margin: 0,
+        padding: 0,
+      }}>
+      <Button title="左侧导11航栏" style={styles.lefyStyle} />
+
+      <Image
+        style={styles.centerStyle}
+        source={require('./src/assets/images/elk.png')}
+      />
+      <Button title="左侧导11航栏" style={{fontSize: 20}} />
+    </View>
+  );
+}
+
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="home">
         <Stack.Screen
           name="Home"
           component={Home}
-          //   options={{headerShown: false}}
-          options={{headerTitle: props => <LogoTitle {...props} />}}
+          options={{headerShown: false}}
+          //   options={{headerTitle: props => <LogoTitle {...props} />}}
         />
-        <Stack.Screen name="EditPost" component={EmptyScreen} />
+        <Stack.Screen
+          name="EditPost"
+          component={EmptyScreen}
+          options={{headerTitle: props => <LogoTitle111 {...props} />}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
