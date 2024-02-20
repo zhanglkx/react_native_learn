@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import React, {useEffect, useState} from 'react';
 import {ActivityIndicator, FlatList, Text, View} from 'react-native';
 
@@ -40,7 +39,7 @@ const App = () => {
           keyExtractor={({id}) => id}
           renderItem={({item}) => (
             <Text>
-              {item.title}, {item.releaseYear}
+              {item.title}, {item.releaseYear},{111111}
             </Text>
           )}
         />
