@@ -20,12 +20,15 @@ import React from 'react';
 import AppNavigator from './src/Navigator/TabbarNav/TabRouter'; // 导航
 // import {SafeAreaView} from 'react-native-safe-area-context'; // 安全边界
 import {NavigationContainer} from '@react-navigation/native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 function App() {
   return (
-    <NavigationContainer>
-      <AppNavigator />
-    </NavigationContainer>
+    <SafeAreaProvider initialMetrics={null}>
+      <NavigationContainer>
+        <AppNavigator />
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
 
