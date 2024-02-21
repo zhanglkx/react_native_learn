@@ -15,9 +15,9 @@
 // );
 
 import React from 'react';
-import {ApplicationProvider} from '@ui-kitten/components'; // Provider
-import AppNavigator from './src/Navigator/TabNavigation'; // 导航
-import {SafeAreaView} from 'react-native-safe-area-context'; // 安全边界
+// import {ApplicationProvider} from '@ui-kitten/components'; // Provider
+import AppNavigator from './src/Navigator/Router/StackRouter'; // 导航
+// import {SafeAreaView} from 'react-native-safe-area-context'; // 安全边界
 import {NavigationContainer} from '@react-navigation/native';
 
 function App() {
