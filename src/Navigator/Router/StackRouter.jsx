@@ -119,10 +119,42 @@ export default function StackRouter() {
             },
             headerTitle: headerTitleComponent,
             headerRight: RightViewComponent,
+            headerShown: true,
+            headerTitleAlign: 'center',
+            headerTitleStyle: {
+              color: '#fff',
+            },
+            headerBackTitle: '返回',
+            headerBackTitleStyle: {
+              color: '#fff',
+            },
           };
         }}
       />
-      <Stack.Screen name="List" component={ListScreen} />
+      <Stack.Screen
+        name="List"
+        component={ListScreen}
+        options={({navigation, route}) => {
+          return {
+            title: '首页',
+            headerStyle: {
+              height: 80,
+              backgroundColor: '#2196F3',
+            },
+            headerTitle: headerTitleComponent,
+            headerRight: RightViewComponent,
+            headerShown: false,
+            headerTitleAlign: 'center',
+            headerTitleStyle: {
+              color: '#fff',
+            },
+            headerBackTitle: '返回',
+            headerBackTitleStyle: {
+              color: '#fff',
+            },
+          };
+        }}
+      />
       <Stack.Screen name="Detail" component={DetailScreen} />
     </Stack.Navigator>
   );
