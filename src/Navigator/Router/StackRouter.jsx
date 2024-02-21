@@ -90,10 +90,14 @@ const headerTitleComponent = () => <TitleView />;
 
 const RightView = ({navigation, route}) => {
   const nav = useNavigation();
-
+  console.log(route);
   return (
     <View>
-      <Button title="Right" onPress={() => nav.navigate('Detail')} />
+      <Button
+        title="Right"
+        color={'#888888'}
+        onPress={() => nav.navigate('Detail')}
+      />
     </View>
   );
 };
