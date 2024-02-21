@@ -50,6 +50,12 @@ function ListScreen({navigation, route}) {
     }
   }, [id]);
 
+  const changeParam = () => {
+    navigation.setParams({
+      otherParam: 'someText',
+    });
+  };
+
   const [title, setTitle] = React.useState('');
 
   return (
@@ -58,6 +64,7 @@ function ListScreen({navigation, route}) {
       <Text style={{margin: 10}}>Post: {id}</Text>
       <Text style={{margin: 10}}>Post: {otherParam}</Text>
       <Text style={{margin: 10}}>title: {title}</Text>
+      <Button title="Change param" onPress={changeParam} />
     </View>
   );
 }
