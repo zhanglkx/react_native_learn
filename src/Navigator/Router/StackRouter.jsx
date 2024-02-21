@@ -57,15 +57,22 @@ function ListScreen({navigation, route}) {
     });
   };
 
+  const backToTop = () => {
+    navigation.popToTop();
+  };
   const [title, setTitle] = React.useState('');
 
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Button title="Create post" onPress={() => navigation.navigate('List')} />
+      <Button
+        title="Create post"
+        onPress={() => navigation.navigate('Detail')}
+      />
       <Text style={{margin: 10}}>Post: {id}</Text>
       <Text style={{margin: 10}}>Post: {otherParam}</Text>
       <Text style={{margin: 10}}>title: {title}</Text>
       <Button title="Change param" onPress={changeParam} />
+      <Button title="backToTop" onPress={backToTop} />
     </View>
   );
 }
@@ -106,7 +113,9 @@ const RightViewComponent = () => <RightView />;
 
 export default function StackRouter() {
   return (
-    <Stack.Navigator initialRouteName="Home">
+    <Stack.Navigator
+      initialRouteName="Home"
+      screenOptions={{headerTintColor: 'red'}}>
       <Stack.Screen
         name="Home"
         component={HomeScreen}
@@ -136,13 +145,6 @@ export default function StackRouter() {
         component={ListScreen}
         options={({navigation, route}) => {
           return {
-            title: '首页',
-            headerStyle: {
-              height: 80,
-              backgroundColor: '#2196F3',
-            },
-            headerTitle: headerTitleComponent,
-            headerRight: RightViewComponent,
             headerShown: false,
             headerTitleAlign: 'center',
             headerTitleStyle: {
