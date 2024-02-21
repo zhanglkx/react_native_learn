@@ -77,10 +77,22 @@ function ListScreen({navigation, route}) {
   );
 }
 
-function DetailScreen() {
+function DetailScreen({navigation}) {
+  const headerTitleComponent = () => <Button title="Setting">1</Button>;
+
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>DetailScreen Screen</Text>
+      <Button
+        title="Update"
+        onPress={() =>
+          navigation.setOptions({
+            title: 'New Home',
+            headerRight: headerTitleComponent,
+          })
+        }>
+        1
+      </Button>
     </View>
   );
 }
@@ -115,7 +127,13 @@ export default function StackRouter() {
   return (
     <Stack.Navigator
       initialRouteName="Home"
-      screenOptions={{headerTintColor: 'red'}}>
+      screenOptions={{
+        headerTintColor: 'blue',
+        headerStyle: {backgroundColor: '#f4511e'},
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}>
       <Stack.Screen
         name="Home"
         component={HomeScreen}
