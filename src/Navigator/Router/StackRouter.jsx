@@ -7,6 +7,7 @@ import * as React from 'react';
 import {Button, View, Text, Image, StyleSheet} from 'react-native';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {useNavigation} from '@react-navigation/native';
 
 // 用于配置堆栈路由的管理；它返回了包含两个组件的对象：Screen和Navigator，他们都是配置导航器所需的React组件，
 // 其中Screen组件是一个高阶组件，会增强props；在使用的页面中，会携带navigation对象和route对象
@@ -77,18 +78,44 @@ function DetailScreen() {
   );
 }
 
+const TitleView = () => {
+  return (
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text style={{margin: 10}}>title1: </Text>
+    </View>
+  );
+};
+
+const headerTitleComponent = () => <TitleView />;
+
+const RightView = ({navigation, route}) => {
+  const nav = useNavigation();
+
+  return (
+    <View>
+      <Button title="Right" onPress={() => nav.navigate('Detail')} />
+    </View>
+  );
+};
+
+const RightViewComponent = () => <RightView />;
+
 export default function StackRouter() {
   return (
     <Stack.Navigator initialRouteName="Home">
       <Stack.Screen
         name="Home"
         component={HomeScreen}
-        options={{
-          title: '首页',
-          headerStyle: {
-            height: 80,
-            backgroundColor: '#2196F3',
-          },
+        options={({navigation, route}) => {
+          return {
+            title: '首页',
+            headerStyle: {
+              height: 80,
+              backgroundColor: '#2196F3',
+            },
+            headerTitle: headerTitleComponent,
+            headerRight: RightViewComponent,
+          };
         }}
       />
       <Stack.Screen name="List" component={ListScreen} />
