@@ -27,7 +27,7 @@ function HomeScreen({navigation, route}) {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Button
-        title="Create post"
+        title="跳转到 List"
         onPress={() =>
           navigation.navigate('List', {
             id: 86,
@@ -65,7 +65,7 @@ function ListScreen({navigation, route}) {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Button
-        title="Create post"
+        title="跳转到 Detail"
         onPress={() => navigation.navigate('Detail')}
       />
       <Text style={{margin: 10}}>Post: {id}</Text>
