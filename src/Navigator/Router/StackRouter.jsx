@@ -12,18 +12,52 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 // 其中Screen组件是一个高阶组件，会增强props；在使用的页面中，会携带navigation对象和route对象
 const Stack = createNativeStackNavigator();
 
-function HomeScreen() {
+function HomeScreen({navigation, route}) {
+  React.useEffect(() => {
+    if (route.params?.post) {
+      // Post updated, do something with `route.params.post`
+      // For example, send the post to the server
+      setTitle('useEffect执行');
+    }
+  }, [route.params?.post]);
+
+  const [title, setTitle] = React.useState('');
+
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
+      <Button
+        title="Create post"
+        onPress={() =>
+          navigation.navigate('List', {
+            id: 86,
+            otherParam: 'anything you want here',
+          })
+        }
+      />
+      <Text style={{margin: 10}}>Post: {route.params?.post}</Text>
+      <Text style={{margin: 10}}>title: {title}</Text>
     </View>
   );
 }
 
-function ListScreen() {
+function ListScreen({navigation, route}) {
+  const {id, otherParam} = route.params;
+  React.useEffect(() => {
+    if (id) {
+      // Post updated, do something with `route.params.post`
+      // For example, send the post to the server
+      setTitle('useEffect执行');
+    }
+  }, [id]);
+
+  const [title, setTitle] = React.useState('');
+
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>ListScreen Screen</Text>
+      <Button title="Create post" onPress={() => navigation.navigate('List')} />
+      <Text style={{margin: 10}}>Post: {id}</Text>
+      <Text style={{margin: 10}}>Post: {otherParam}</Text>
+      <Text style={{margin: 10}}>title: {title}</Text>
     </View>
   );
 }
