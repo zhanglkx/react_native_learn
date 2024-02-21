@@ -11,7 +11,13 @@ const Tab = createBottomTabNavigator();
 
 function HomeScreen({navigation, route}) {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+    <View
+      style={{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'red',
+      }}>
       <Button
         title="跳转到 List"
         onPress={() =>
@@ -90,8 +96,33 @@ function ListStackScreen() {
 
 export default function TabStackRouter({navigation}) {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
+    <Tab.Navigator
+      screenOptions={({route}) => ({
+        tabBarActiveTintColor: 'pink',
+        tabBarInactiveTintColor: 'gray',
+        tabBarActiveBackgroundColor: 'yellow',
+        tabBarIcon: ({focused, color, size}) => {
+          let iconName;
+          if (route.name === 'Home') {
+            iconName = focused ? 'home' : 'home-outline';
+          }
+          if (route.name === 'List') {
+            iconName = focused ? 'list-circle' : 'list-circle-outline';
+          }
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+        tabBarBackground: () => (
+          <View
+            style={{backgroundColor: 'pink', width: '100%', height: '100%'}}
+          />
+        ),
+        tabBarStyle: () => <View style={{backgroundColor: 'black'}} />,
+      })}>
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{headerShown: false, tabBarActiveBackgroundColor: 'red'}}
+      />
       <Tab.Screen
         name="ListStack"
         component={ListStackScreen}
