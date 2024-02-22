@@ -1,14 +1,11 @@
-/* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import Login from '@/views/Login/Login';
+import Login from '../views/Login/Login';
 import Home from '../views/Home/Home';
 import Passwd from '../views/Passwd/Passwd';
 import Change from '../views/Change/Change';
-
-import {StatusBar, View} from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,20 +18,9 @@ const index = () => {
         options={{
           headerShown: false,
           title: '登录',
-          //   headerTitleStyle: {
-          //     color: 'white',
-          //   },
-          //   headerTintColor: 'white',
-          //   headerTitleAlign: 'center',
-          //   headerStyle: {
-          //     backgroundColor: 'transparent',
-          //   },
-          //   headerBackground: () => (
-          //     <View style={{backgroundColor: 'transparent'}} />
-          //   ),
         }}
       />
-      <Stack.Screen name="Home" component={Home} options={{title: '密码'}} />
+      <Stack.Screen name="Home" component={Home} options={{title: '主页'}} />
       <Stack.Screen
         name="Passwd"
         component={Passwd}
