@@ -3,10 +3,10 @@ import {View} from 'react-native';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import Login from '../views/Login';
-import Home from '../views/Home';
-import Passwd from '../views/Passwd';
-import Change from '../views/Change';
+import Login from '../views/Login/Login';
+import Home from '../views/Home/Home';
+import Passwd from '../views/Passwd/Passwd';
+import Change from '../views/Change/Change';
 
 const Stack = createNativeStackNavigator();
 
