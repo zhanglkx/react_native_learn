@@ -3,14 +3,18 @@ import React from 'react';
 import {Button} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 import {Image} from 'react-native';
+import {useHeaderHeight} from '@react-navigation/elements';
 
 import styles from './style';
 
 export default function Login() {
   const navigator = useNavigation();
 
+  const headerHeigh = useHeaderHeight();
+
   const gotoHome = () => {
     navigator.navigate('Change');
+    console.log(headerHeigh);
   };
 
   return (
