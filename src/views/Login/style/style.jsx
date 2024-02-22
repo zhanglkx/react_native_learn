@@ -1,11 +1,8 @@
 import {StyleSheet} from 'react-native';
-
+import colorManager from '../../../share/color/color';
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    backgroundColor: 'blue',
+    backgroundColor: colorManager.themeColor,
     width: '100%',
     height: '100%',
   },
