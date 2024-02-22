@@ -5,12 +5,16 @@ import {useNavigation} from '@react-navigation/native';
 import {Image} from 'react-native';
 import {useHeaderHeight} from '@react-navigation/elements';
 
-import styles from './style';
+import {Dimensions, StatusBar} from 'react-native';
+
+import {getNavHeight} from '../../utils/deviceInfo';
+
+import styles from './style/style';
 
 export default function Login() {
   const navigator = useNavigation();
 
-  const headerHeigh = useHeaderHeight();
+  const headerHeigh = getNavHeight();
 
   const gotoHome = () => {
     navigator.navigate('Change');
