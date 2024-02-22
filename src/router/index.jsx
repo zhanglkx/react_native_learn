@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import Login from '../views/Login/Login';
+import Login from '@/views/Login/Login';
 import Home from '../views/Home/Home';
 import Passwd from '../views/Passwd/Passwd';
 import Change from '../views/Change/Change';
@@ -34,6 +34,7 @@ const index = () => {
           //   ),
         }}
       />
+      <Stack.Screen name="Home" component={Home} options={{title: '密码'}} />
       <Stack.Screen
         name="Passwd"
         component={Passwd}
