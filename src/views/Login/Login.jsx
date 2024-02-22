@@ -22,21 +22,23 @@ export default function Login() {
   };
 
   return (
-    <SafeAreaView>
-      <View style={styles.container}>
-        <Image style={styles.icon} source={require('./Image/icon.png')} />
+    <View style={styles.container}>
+      <SafeAreaView>
+        <View>
+          <Image style={styles.icon} source={require('./Image/icon.png')} />
 
-        <Text style={styles.textStyle}>Login</Text>
+          <Text style={styles.textStyle}>Login</Text>
 
-        <Button
-          mode="text"
-          labelStyle={styles.buttonStyle}
-          buttonStyle={styles.buttonStyle}
-          buttonColor="#f194ff"
-          onPress={gotoHome}>
-          Button111
-        </Button>
-      </View>
-    </SafeAreaView>
+          <Button
+            mode="text"
+            labelStyle={styles.buttonStyle}
+            buttonStyle={styles.buttonStyle}
+            buttonColor="#f194ff"
+            onPress={gotoHome}>
+            Button111
+          </Button>
+        </View>
+      </SafeAreaView>
+    </View>
   );
 }
