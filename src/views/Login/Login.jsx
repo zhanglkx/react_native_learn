@@ -3,7 +3,7 @@ import React from 'react';
 import {Button, Text, TextInput} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 import {Image} from 'react-native';
-
+import {useTheme} from 'react-native-paper';
 // import {getNavHeight} from '../../utils/deviceInfo';
 
 import styles from './style/style';
@@ -15,8 +15,10 @@ const Left = () => {
 export default function Login() {
   const navigator = useNavigation();
   const [text, setText] = React.useState('');
+  const {colors} = useTheme();
   const gotoHome = () => {
     navigator.navigate('Change');
+    console.log(colors);
   };
 
   return (
@@ -27,8 +29,7 @@ export default function Login() {
         <Text style={styles.textStyle}>安全密码</Text>
 
         <TextInput
-          label=""
-          textColor="#f5f5"
+          textColor={colors.myOwnColor}
           left={Left}
           value={text}
           mode="outlined"
