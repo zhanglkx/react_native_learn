@@ -24,20 +24,16 @@ export default function Login() {
   return (
     <View style={styles.container}>
       <SafeAreaView>
-        <View>
-          <Image style={styles.icon} source={require('./Image/icon.png')} />
+        <Image style={styles.icon} source={require('./Image/icon.png')} />
 
-          <Text style={styles.textStyle}>Login</Text>
-
-          <Button
-            mode="text"
-            labelStyle={styles.buttonStyle}
-            buttonStyle={styles.buttonStyle}
-            buttonColor="#f194ff"
-            onPress={gotoHome}>
-            Button111
-          </Button>
-        </View>
+        <Button
+          mode="text"
+          labelStyle={styles.buttonStyle}
+          buttonStyle={styles.buttonStyle}
+          buttonColor="#f194ff"
+          onPress={gotoHome}>
+          Button111
+        </Button>
       </SafeAreaView>
     </View>
   );

@@ -25,6 +25,8 @@ const styles = StyleSheet.create({
     width: 48.2,
     height: 51.8,
     backgroundColor: 'red',
+    top: 50,
+    left: 50,
   },
 });
 
