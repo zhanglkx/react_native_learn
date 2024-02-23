@@ -1,9 +1,8 @@
 import {
   View,
   SafeAreaView,
-  Touchable,
-  TouchableOpacity,
   TouchableWithoutFeedback,
+  TouchableOpacity,
 } from 'react-native';
 import React from 'react';
 import {Button, Text, TextInput} from 'react-native-paper';
@@ -13,14 +12,15 @@ import {useTheme} from 'react-native-paper';
 // import {getNavHeight} from '../../utils/deviceInfo';
 import Toast from 'react-native-easy-toast';
 import styles from './style/style';
-
-// const Left = () => {
-//   return <Text>Left</Text>;
-// };
+// import {Icon, MD3Colors} from 'react-native-paper';
+// import Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/Feather';
 
 export default function Login() {
   const navigator = useNavigation();
   const [text, setText] = React.useState('');
+
+  const [isPasswordVisible, setIsPasswordVisible] = React.useState(false);
 
   const {colors} = useTheme();
   const toastRef = React.useRef();
@@ -38,29 +38,48 @@ export default function Login() {
     textInputRef.current?.blur();
   };
 
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
+
   return (
     <View style={styles.container}>
       <SafeAreaView>
         <TouchableWithoutFeedback onPress={removeFocus}>
-          <View style={{width: '100%', height: '100%'}} onPress={removeFocus}>
+          <View style={styles.blankViewStyle} onPress={removeFocus}>
             <Image style={styles.icon} source={require('./Image/icon.png')} />
-
             <Text style={styles.textStyle}>安全密码</Text>
+            {/* 输入框 */}
+            <View style={styles.inputAreaStyle}>
+              <TextInput
+                ref={textInputRef}
+                secureTextEntry={!isPasswordVisible}
+                textColor={colors.myRedColor}
+                value={text}
+                mode="outlined"
+                placeholder="输入密码"
+                style={styles.inputStyle}
+                outlineStyle={styles.inputBorderStyle}
+                outlineColor={colors.myRedColor}
+                activeOutlineColor={colors.myRedColor}
+                onChangeText={text1 => setText(text1)}
+                // left={<TextInput.Affix text="#" />}
+                right={
+                  <TextInput.Icon
+                    icon={isPasswordVisible ? 'eye-off' : 'eye'}
+                    color={colors.myRedColor}
+                    onPress={() => {
+                      togglePasswordVisibility('flatLeftIcon');
+                    }}
+                  />
+                }
+              />
 
-            <TextInput
-              ref={textInputRef}
-              secureTextEntry={true}
-              textColor={colors.myRedColor}
-              value={text}
-              mode="outlined"
-              placeholder="输入密码"
-              style={styles.inputStyle}
-              outlineStyle={styles.inputBorderStyle}
-              outlineColor={colors.myRedColor}
-              activeOutlineColor={colors.myRedColor}
-              onChangeText={text1 => setText(text1)}
-            />
-
+              {/* <Text style={styles.secretIconStyle}>
+                <Icon name="eye" size={20} color="#f00" />
+              </Text> */}
+            </View>
+            {/* 确定按钮 */}
             <Button
               mode="text"
               labelStyle={styles.buttonLabelStyle}
@@ -69,6 +88,7 @@ export default function Login() {
               onPress={gotoHome}>
               进入应用
             </Button>
+            {/* toast */}
             <Toast
               ref={toastRef}
               position="center"
