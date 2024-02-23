@@ -19,8 +19,8 @@ export default function Login() {
   const toastRef = React.useRef();
 
   const gotoHome = () => {
-    if (text === '123456') {
-      navigator.navigate('Change');
+    if (text === '1') {
+      navigator.navigate('Home');
     } else {
       toastRef.current.show('hello world!');
     }
