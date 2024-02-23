@@ -1,11 +1,12 @@
 import * as React from 'react';
-import {TouchableOpacity, Text, Image} from 'react-native';
+
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {useNavigation} from '@react-navigation/native';
+
 import Login from '../views/Login/Login';
 import Home from '../views/Home/Home';
 import Passwd from '../views/Passwd/Passwd';
 import Change from '../views/Change/Change';
+import BackComponent from '../components/navigator/BackView';
 
 const Stack = createNativeStackNavigator();
 
@@ -43,19 +44,6 @@ const Index = () => {
         options={{title: '修改入口密码'}}
       />
     </Stack.Navigator>
-  );
-};
-
-const BackComponent = () => {
-  const navigation = useNavigation();
-  return (
-    <TouchableOpacity onPress={() => navigation.goBack()}>
-      {/* <Text>自定义返回按钮</Text> */}
-      <Image
-        source={require('../assets/images/ansck.png')}
-        style={{width: 40, height: 40, marginLeft: 10}}
-      />
-    </TouchableOpacity>
   );
 };
 
