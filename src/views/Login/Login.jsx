@@ -14,7 +14,7 @@ import Toast from 'react-native-easy-toast';
 import styles from './style/style';
 // import {Icon, MD3Colors} from 'react-native-paper';
 // import Ionicons from 'react-native-vector-icons/Ionicons';
-import Icon from 'react-native-vector-icons/Feather';
+// import Icon from 'react-native-vector-icons/Feather';
 
 export default function Login() {
   const navigator = useNavigation();
@@ -30,7 +30,7 @@ export default function Login() {
     if (text === '1') {
       navigator.navigate('Home');
     } else {
-      toastRef.current.show('hello world!');
+      toastRef.current.show('密码错了！哥们👬🏻');
     }
   };
 
@@ -92,8 +92,8 @@ export default function Login() {
             <Toast
               ref={toastRef}
               position="center"
-              fadeInDuration={750}
-              fadeOutDuration={3000}
+              fadeInDuration={50}
+              fadeOutDuration={2000}
             />
           </View>
         </TouchableWithoutFeedback>
