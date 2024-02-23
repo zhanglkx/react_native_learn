@@ -1,6 +1,9 @@
 const colorManager = {
-  themeColor: '#f5f5f5',
+  themeBgColor: '#f5f5f5',
+  themeColor: '#107868',
   titleColor90: hexToRGBA('#000000', 0.9),
+  titleColor60: hexToRGBA('#000000', 0.6),
+  titleColor40: hexToRGBA('#000000', 0.4),
 };
 
 /**

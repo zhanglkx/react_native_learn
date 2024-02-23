@@ -25,10 +25,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
     marginTop: 50,
     marginLeft: 50,
+    marginRight: 50,
     fontSize: 20,
-    width: 100,
-    height: 50,
     color: 'gray',
+  },
+  buttonLabelStyle: {
+    color: colorManager.titleColor90,
+    textAlign: 'center',
+    fontSize: 20,
+    lineHeight: 40,
   },
   icon: {
     width: 48.2 * 2,
