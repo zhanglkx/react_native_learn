@@ -20,14 +20,20 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: colorManager.titleColor90,
     fontWeight: 'bold',
+    borderRadius: 30,
+  },
+  inputBorderStyle: {
+    borderRadius: 30,
+    borderColor: 'lightgreen',
   },
   buttonStyle: {
-    backgroundColor: 'red',
+    backgroundColor: 'lightgreen',
     marginTop: 50,
     marginLeft: 50,
     marginRight: 50,
     fontSize: 20,
     color: 'gray',
+    borderRadius: 30,
   },
   buttonLabelStyle: {
     color: colorManager.titleColor90,

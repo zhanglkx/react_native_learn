@@ -8,6 +8,7 @@ const theme = {
   colors: {
     ...DefaultTheme.colors,
     myOwnColor: '#BADA55',
+    myRedColor: '#ff0000',
   },
 };
 
