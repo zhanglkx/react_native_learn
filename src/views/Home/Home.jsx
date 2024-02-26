@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {View, TouchableOpacity} from 'react-native';
 import {TextInput, Icon, Text} from 'react-native-paper';
+import styles from './style';
 
 const PasswordInput = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
