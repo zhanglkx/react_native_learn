@@ -14,7 +14,10 @@ const PasswordInput = () => {
   };
 
   const CalendarManager = NativeModules.CalendarManager;
-  CalendarManager.addEvent('Birthday Party', '4 Privet Drive, Surrey');
+  CalendarManager.addEvent(
+    'Birthday Party',
+    '4 Privet Drive, Surrey-哈哈哈哈我实现原生混编啦',
+  );
 
   return (
     <View style={{flexDirection: 'row', alignItems: 'center'}}>
