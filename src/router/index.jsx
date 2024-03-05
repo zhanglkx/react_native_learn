@@ -7,6 +7,7 @@ import Home from '../views/Home/Home';
 import Passwd from '../views/Passwd/Passwd';
 import Change from '../views/Change/Change';
 import BackComponent from '../components/navigator/BackView';
+import About from '../views/About/About';
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,7 @@ const Index = () => {
         component={Passwd}
         options={{title: '密码'}}
       />
+      <Stack.Screen name="About" component={About} options={{title: '关于'}} />
       <Stack.Screen
         name="Change"
         component={Change}

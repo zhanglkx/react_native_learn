@@ -47,6 +47,7 @@ import {
   RefreshControl,
   ActivityIndicator,
 } from 'react-native';
+import {Button} from 'react-native-paper';
 
 const CITY_NAMES = ['北京', '上海', '广州', '深圳', '成都', '武汉', '南京'];
 
@@ -55,6 +56,8 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      navigator: props.navigator,
+
       isLoading: false, //默认没有下拉刷新
       dataArray: CITY_NAMES, //默认数据
     };
@@ -63,6 +66,14 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Button
+          mode="text"
+          labelStyle={styles.buttonLabelStyle}
+          label="进入应用"
+          style={styles.buttonStyle}
+          onPress={() => this.props.navigation.navigate('About')}>
+          进入应用
+        </Button>
         <FlatList
           data={this.state.dataArray}
           renderItem={data => this.renderItemView(data)}
