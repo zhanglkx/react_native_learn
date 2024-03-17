@@ -12,11 +12,15 @@ const WebViewComponent = () => {
         backgroundColor: 'red',
       }}>
       <Text>webVie1w</Text>
-      <WebView
+      {/* <WebView
         source={{uri: 'https://www.baidu.com'}}
         style={styles.container}
-      />
+      /> */}
       {/* <WebView source={{uri: 'https://m.baidu.com'}} style={{marginTop: 20}} /> */}
+      <WebView
+        originWhitelist={['*']}
+        source={{html: '<h1>Hello world</h1>'}}
+      />
     </SafeAreaView>
   );
 };
