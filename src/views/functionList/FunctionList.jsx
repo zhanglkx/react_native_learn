@@ -14,20 +14,43 @@ const DATA = [
     name: 'Webview',
     title: 'Webview',
     router: 'WebViewComponent',
+    desc: 'Webview component',
   },
   {
-    name: 'camera',
-    title: 'camera',
+    name: 'Home',
+    title: 'Home',
+    router: 'Home',
+    desc: 'Home page',
   },
   {
     name: 'Animated',
     title: 'Animated',
     router: 'Animated',
+    desc: 'Animated component',
   },
   {
     name: 'Picker',
     title: 'Picker',
     router: 'Picker',
+    desc: 'Picker component',
+  },
+  {
+    name: 'Login',
+    title: 'Login',
+    router: 'Login',
+    desc: 'Login page',
+  },
+  {
+    name: 'Passwd',
+    title: 'Passwd',
+    router: 'Passwd',
+    desc: 'Passwd component',
+  },
+  {
+    name: 'Change',
+    title: 'Change',
+    router: 'Change',
+    desc: 'Change component',
   },
 ];
 

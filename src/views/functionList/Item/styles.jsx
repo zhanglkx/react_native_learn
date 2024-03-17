@@ -24,12 +24,10 @@ const styles = StyleSheet.create({
     marginTop: 5,
     display: 'flex',
     alignItems: 'center',
-    backgroundColor: 'white',
   },
   content: {
     width: Dimensions.get('window').width - 100,
     height: 56,
-    backgroundColor: 'white',
     marginLeft: 10,
     marginTop: -10,
   },
@@ -48,7 +46,6 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width - 110,
     height: 26,
     marginLeft: 5,
-    backgroundColor: 'red',
   },
   baseLine: {
     width: Dimensions.get('window').width,

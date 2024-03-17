@@ -21,7 +21,7 @@ const Index = () => {
       <Stack.Screen
         name=" FunctionList"
         component={FunctionList}
-        options={{
+        screenOptions={{
           headerShown: false,
           title: '功能列表',
         }}
@@ -29,7 +29,7 @@ const Index = () => {
       <Stack.Screen
         name="WebViewComponent"
         component={WebViewComponent}
-        options={{
+        screenOptions={{
           headerShown: false,
           title: 'WebViewComponent',
         }}
@@ -38,7 +38,7 @@ const Index = () => {
       <Stack.Screen
         name="Picker"
         component={Picker}
-        options={{
+        screenOptions={{
           headerShown: false,
           title: 'Picker',
         }}
@@ -47,7 +47,7 @@ const Index = () => {
       <Stack.Screen
         name="Animated"
         component={Animated}
-        options={{
+        screenOptions={{
           headerShown: false,
           title: 'Animated',
         }}
@@ -55,7 +55,7 @@ const Index = () => {
       <Stack.Screen
         name="Login"
         component={Login}
-        options={{
+        screenOptions={{
           headerShown: false,
           title: '登录',
         }}
@@ -63,7 +63,7 @@ const Index = () => {
       <Stack.Screen
         name="Home"
         component={Home}
-        options={{
+        screenOptions={{
           title: '主页',
           // headerBackTitle: '',
           // headerBackTitleVisible: false,
@@ -75,13 +75,13 @@ const Index = () => {
       <Stack.Screen
         name="Passwd"
         component={Passwd}
-        options={{title: '密码'}}
+        screenOptions={{title: '密码'}}
       />
       <Stack.Screen name="About" component={About} options={{title: '关于'}} />
       <Stack.Screen
         name="Change"
         component={Change}
-        options={{title: '修改入口密码'}}
+        screenOptions={{title: '修改入口密码'}}
       />
     </Stack.Navigator>
   );

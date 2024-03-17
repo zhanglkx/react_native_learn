@@ -21,16 +21,16 @@ const FuncItem = props => {
       }}>
       <View style={styles.container}>
         <Image
-          source={require('../../../assets/images/common_icon_back.png')}
+          source={require('../../../assets/images/圣诞球.png')}
           style={styles.image}
         />
         <View style={styles.content}>
           <Text style={styles.mainTitle}>{props.item.title}</Text>
 
-          <Text style={styles.subTitle}>功能描述</Text>
+          <Text style={styles.subTitle}>功能描述:{props.item.desc}</Text>
         </View>
         <Image
-          source={require('../../../assets/images/common_icon_back.png')}
+          source={require('../../../assets/images/星星.png')}
           style={styles.image}
         />
       </View>
