@@ -9,6 +9,7 @@ import Change from '../views/Change/Change';
 import BackComponent from '../components/navigator/BackView';
 import About from '../views/About/About';
 import FunctionList from '../views/functionList/FunctionList';
+import WebViewComponent from '../views/WebView/webView';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,14 @@ const Index = () => {
         options={{
           headerShown: false,
           title: '功能列表',
+        }}
+      />
+      <Stack.Screen
+        name="WebViewComponent"
+        component={WebViewComponent}
+        options={{
+          headerShown: false,
+          title: 'WebViewComponent',
         }}
       />
       <Stack.Screen
