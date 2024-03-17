@@ -1,10 +1,14 @@
-import {View, Image, Text} from 'react-native';
+import {View, Image, Text, TouchableOpacity, Alert} from 'react-native';
 import React from 'react';
 import styles from './styles';
 
 const FuncItem = ({title}) => {
   return (
-    <View style={styles.main}>
+    <TouchableOpacity
+      style={styles.main}
+      onPress={() => {
+        Alert.alert('功能暂未开放');
+      }}>
       <View style={styles.container}>
         <Image
           source={require('../../../assets/images/common_icon_back.png')}
@@ -23,7 +27,7 @@ const FuncItem = ({title}) => {
       <View>
         <View style={styles.baseLine} />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
