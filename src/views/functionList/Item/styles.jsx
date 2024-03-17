@@ -2,6 +2,12 @@ import {StyleSheet} from 'react-native';
 import colorManager from '../../../Theme/colors/color';
 import {Dimensions} from 'react-native';
 const styles = StyleSheet.create({
+  main: {
+    width: Dimensions.get('window').width,
+    height: 57,
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
   container: {
     width: Dimensions.get('window').width,
     height: 56,
@@ -43,6 +49,12 @@ const styles = StyleSheet.create({
     height: 26,
     marginLeft: 5,
     backgroundColor: 'red',
+  },
+  baseLine: {
+    width: Dimensions.get('window').width,
+    height: 1,
+    backgroundColor: 'black',
+    bottom: 0,
   },
 });
 export default styles;

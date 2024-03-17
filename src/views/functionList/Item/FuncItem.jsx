@@ -4,20 +4,25 @@ import styles from './styles';
 
 const FuncItem = ({title}) => {
   return (
-    <View style={styles.container}>
-      <Image
-        source={require('../../../assets/images/common_icon_back.png')}
-        style={styles.image}
-      />
-      <View style={styles.content}>
-        <Text style={styles.mainTitle}>{title}</Text>
+    <View style={styles.main}>
+      <View style={styles.container}>
+        <Image
+          source={require('../../../assets/images/common_icon_back.png')}
+          style={styles.image}
+        />
+        <View style={styles.content}>
+          <Text style={styles.mainTitle}>{title}</Text>
 
-        <Text style={styles.subTitle}>功能描述</Text>
+          <Text style={styles.subTitle}>功能描述</Text>
+        </View>
+        <Image
+          source={require('../../../assets/images/common_icon_back.png')}
+          style={styles.image}
+        />
       </View>
-      <Image
-        source={require('../../../assets/images/common_icon_back.png')}
-        style={styles.image}
-      />
+      <View>
+        <View style={styles.baseLine} />
+      </View>
     </View>
   );
 };
