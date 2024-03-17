@@ -8,12 +8,21 @@ import Passwd from '../views/Passwd/Passwd';
 import Change from '../views/Change/Change';
 import BackComponent from '../components/navigator/BackView';
 import About from '../views/About/About';
+import FunctionList from '../views/functionList/FunctionList';
 
 const Stack = createNativeStackNavigator();
 
 const Index = () => {
   return (
     <Stack.Navigator>
+      <Stack.Screen
+        name=" FunctionList"
+        component={FunctionList}
+        options={{
+          headerShown: false,
+          title: '功能列表',
+        }}
+      />
       <Stack.Screen
         name="Login"
         component={Login}
