@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
 import React from 'react';
 import {WebView} from 'react-native-webview';
