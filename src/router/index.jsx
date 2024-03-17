@@ -14,6 +14,7 @@ import Animated from '../views/Animated/Animated';
 import Picker from '../views/PickerComponent/Picker';
 import Swiper from '../views/Swiper/Swiper';
 import AsyncStorage from '../views/AsyncStorage/AsyncStorage';
+import Geolocation from '../views/Geolocation/Geolocation';
 const Stack = createNativeStackNavigator();
 
 const Index = () => {
@@ -93,6 +94,11 @@ const Index = () => {
       <Stack.Screen
         name="AsyncStorage"
         component={AsyncStorage}
+        screenOptions={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Geolocation"
+        component={Geolocation}
         screenOptions={{headerShown: false}}
       />
     </Stack.Navigator>

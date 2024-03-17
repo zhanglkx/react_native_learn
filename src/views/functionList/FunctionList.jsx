@@ -58,6 +58,12 @@ const DATA = [
     router: 'AsyncStorage',
     desc: 'AsyncStorage component',
   },
+  {
+    name: 'Geolocation',
+    title: 'Geolocation',
+    router: 'Geolocation',
+    desc: 'Geolocation component',
+  },
 ];
 
 const App = () => {

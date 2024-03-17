@@ -5,12 +5,9 @@ import {useNavigation} from '@react-navigation/native';
 
 const FuncItem = props => {
   const navigator = useNavigation();
-  console.log(props);
 
   const clickItem = item => {
-    console.log(item);
     navigator.navigate(item);
-    // navigator.navigate('Home');
   };
 
   return (
