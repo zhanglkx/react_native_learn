@@ -9,7 +9,7 @@ const WebViewComponent = () => {
       style={{
         height: Dimensions.get('window').height,
         width: Dimensions.get('window').width,
-        backgroundColor: 'red',
+        backgroundColor: 'pink',
       }}>
       <Text>webVie1w</Text>
       {/* <WebView
