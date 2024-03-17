@@ -19,6 +19,16 @@ const DATA = [
     name: 'camera',
     title: 'camera',
   },
+  {
+    name: 'Animated',
+    title: 'Animated',
+    router: 'Animated',
+  },
+  {
+    name: 'Picker',
+    title: 'Picker',
+    router: 'Picker',
+  },
 ];
 
 const App = () => {

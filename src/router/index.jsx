@@ -10,6 +10,8 @@ import BackComponent from '../components/navigator/BackView';
 import About from '../views/About/About';
 import FunctionList from '../views/functionList/FunctionList';
 import WebViewComponent from '../views/WebView/webView';
+import Animated from '../views/Animated/Animated';
+import Picker from '../views/PickerComponent/Picker';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +32,24 @@ const Index = () => {
         options={{
           headerShown: false,
           title: 'WebViewComponent',
+        }}
+      />
+
+      <Stack.Screen
+        name="Picker"
+        component={Picker}
+        options={{
+          headerShown: false,
+          title: 'Picker',
+        }}
+      />
+
+      <Stack.Screen
+        name="Animated"
+        component={Animated}
+        options={{
+          headerShown: false,
+          title: 'Animated',
         }}
       />
       <Stack.Screen
