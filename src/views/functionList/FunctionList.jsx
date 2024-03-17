@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  FlatList,
-  StyleSheet,
-  View,
-  StatusBar,
-} from 'react-native';
+import {SafeAreaView, FlatList, View} from 'react-native';
 import Item from './Item/FuncItem';
 import styles from './styles/styles';
 
@@ -51,6 +45,18 @@ const DATA = [
     title: 'Change',
     router: 'Change',
     desc: 'Change component',
+  },
+  {
+    name: 'Swiper',
+    title: 'Swiper',
+    router: 'Swiper',
+    desc: 'Swiper component',
+  },
+  {
+    name: 'AsyncStorage',
+    title: 'AsyncStorage',
+    router: 'AsyncStorage',
+    desc: 'AsyncStorage component',
   },
 ];
 

@@ -12,7 +12,8 @@ import FunctionList from '../views/functionList/FunctionList';
 import WebViewComponent from '../views/WebView/webView';
 import Animated from '../views/Animated/Animated';
 import Picker from '../views/PickerComponent/Picker';
-
+import Swiper from '../views/Swiper/Swiper';
+import AsyncStorage from '../views/AsyncStorage/AsyncStorage';
 const Stack = createNativeStackNavigator();
 
 const Index = () => {
@@ -82,6 +83,17 @@ const Index = () => {
         name="Change"
         component={Change}
         screenOptions={{title: '修改入口密码'}}
+      />
+
+      <Stack.Screen
+        name="Swiper"
+        component={Swiper}
+        screenOptions={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="AsyncStorage"
+        component={AsyncStorage}
+        screenOptions={{headerShown: false}}
       />
     </Stack.Navigator>
   );
