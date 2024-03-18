@@ -18,3 +18,28 @@ const App = () => {
 };
 
 export default App;
+
+// import * as React from 'react';
+// import {SafeAreaProvider} from 'react-native-safe-area-context';
+// import {Provider as StoreProvider} from 'react-redux';
+// // import {NativeBaseProvider} from 'native-base';
+// import {NavigationContainer} from '@react-navigation/native';
+// import Router from './src/router/index';
+// import Index from './src/views/MainProject/index';
+// import store from './src/views/MainProject/redux/store';
+// const App = () => {
+//   return (
+//     <StoreProvider store={store}>
+//       <SafeAreaProvider>
+//         <NavigationContainer>
+//           {/* <NativeBaseProvider> */}
+//           {/*  NativeBaseProvider先注释掉，因为会提示警告说 react18 不再需要啥的*/}
+//           <Index />
+//           {/* </NativeBaseProvider> */}
+//         </NavigationContainer>
+//       </SafeAreaProvider>
+//     </StoreProvider>
+//   );
+// };
+
+// export default App;
