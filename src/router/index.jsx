@@ -15,6 +15,8 @@ import Picker from '../views/PickerComponent/Picker';
 import Swiper from '../views/Swiper/Swiper';
 import AsyncStorage from '../views/AsyncStorage/AsyncStorage';
 import Geolocation from '../views/Geolocation/Geolocation';
+import FaceRecognitionPunch from '../views/Camera/Camera';
+import ImagePickerComponent from '../views/ImagePicker/ImagePicker';
 const Stack = createNativeStackNavigator();
 
 const Index = () => {
@@ -99,6 +101,16 @@ const Index = () => {
       <Stack.Screen
         name="Geolocation"
         component={Geolocation}
+        screenOptions={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="FaceRecognitionPunch"
+        component={FaceRecognitionPunch}
+        screenOptions={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ImagePickerComponent"
+        component={ImagePickerComponent}
         screenOptions={{headerShown: false}}
       />
     </Stack.Navigator>

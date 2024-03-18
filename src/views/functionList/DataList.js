@@ -59,6 +59,18 @@ const DataList = [
     router: 'Geolocation',
     desc: 'Geolocation component',
   },
+  {
+    name: 'FaceRecognitionPunch',
+    title: 'FaceRecognitionPunch',
+    router: 'FaceRecognitionPunch',
+    desc: 'FaceRecognitionPunch component',
+  },
+  {
+    name: 'ImagePickerComponent',
+    title: 'ImagePickerComponent',
+    router: 'ImagePickerComponent',
+    desc: 'ImagePickerComponent component',
+  },
 ];
 
 export default DataList;

@@ -6780,6 +6780,11 @@ react-native-gesture-handler@^2.14.1:
     lodash "^4.17.21"
     prop-types "^15.7.2"
 
+react-native-image-picker@^7.1.1:
+  version "7.1.1"
+  resolved "https://registry.npmmirror.com/react-native-image-picker/-/react-native-image-picker-7.1.1.tgz#89ea4611d5a05e4748adefef9bdf22e175f6f56d"
+  integrity sha512-8zQS8RJkGq+jV6bzmIQ560QL2tccXUwouDWktJt7typfNu/QpuDm9pnESeLkdA5MHGTMm8YR09tcV1qtBD+0fg==
+
 react-native-paper@^5.12.3:
   version "5.12.3"
   resolved "https://registry.npmmirror.com/react-native-paper/-/react-native-paper-5.12.3.tgz#d583119722ebbfbb7fe40400181d63748cca3683"
@@ -6834,6 +6839,11 @@ react-native-vector-icons@^10.0.3:
   dependencies:
     prop-types "^15.7.2"
     yargs "^16.1.1"
+
+react-native-vision-camera@^3.9.1:
+  version "3.9.1"
+  resolved "https://registry.npmmirror.com/react-native-vision-camera/-/react-native-vision-camera-3.9.1.tgz#78eb9da9fcd1cf2ee2562ec18ab8966e0215ab1b"
+  integrity sha512-Pi9ikguJlN1ydVZOyRaMfUij1raUY93rVuPM92BsGnXEfxSLbvRYXW4ll1DRtVtjS0kZq4IW7Oavg8syRPc/xQ==
 
 react-native-webview@^13.8.1:
   version "13.8.1"
