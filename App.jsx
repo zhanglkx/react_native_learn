@@ -40,6 +40,6 @@ export default App;
 //       </SafeAreaProvider>
 //     </StoreProvider>
 //   );
-// };
+// };1
 
 // export default App;
