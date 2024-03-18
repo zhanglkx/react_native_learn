@@ -18,6 +18,7 @@ import Geolocation from '../views/Geolocation/Geolocation';
 import FaceRecognitionPunch from '../views/Camera/Camera';
 import ImagePickerComponent from '../views/ImagePicker/ImagePicker';
 import MaterialTopTabNavigator from '../views/MaterialTopTabNavigator/MaterialTopTabNavigator';
+import NestingNavigator from '../views/NestingNavigator/NestingNavigator';
 import Loading from '../views/Loading/Loading';
 const Stack = createNativeStackNavigator();
 
@@ -40,7 +41,6 @@ const Index = () => {
           title: 'WebViewComponent',
         }}
       />
-
       <Stack.Screen
         name="Picker"
         component={Picker}
@@ -49,7 +49,6 @@ const Index = () => {
           title: 'Picker',
         }}
       />
-
       <Stack.Screen
         name="Animated"
         component={Animated}
@@ -89,7 +88,6 @@ const Index = () => {
         component={Change}
         screenOptions={{title: '修改入口密码'}}
       />
-
       <Stack.Screen
         name="Swiper"
         component={Swiper}
@@ -123,6 +121,11 @@ const Index = () => {
       <Stack.Screen
         name="MaterialTopTabNavigator"
         component={MaterialTopTabNavigator}
+        screenOptions={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="NestingNavigator"
+        component={NestingNavigator}
         screenOptions={{headerShown: false}}
       />
     </Stack.Navigator>

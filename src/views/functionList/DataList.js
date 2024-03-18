@@ -83,6 +83,12 @@ const DataList = [
     router: 'MaterialTopTabNavigator',
     desc: 'MaterialTopTabNavigator component',
   },
+  {
+    name: 'NestingNavigator',
+    title: 'NestingNavigator',
+    router: 'NestingNavigator',
+    desc: 'NestingNavigator component',
+  },
 ];
 
 export default DataList;
