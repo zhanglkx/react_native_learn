@@ -17,6 +17,7 @@ import AsyncStorage from '../views/AsyncStorage/AsyncStorage';
 import Geolocation from '../views/Geolocation/Geolocation';
 import FaceRecognitionPunch from '../views/Camera/Camera';
 import ImagePickerComponent from '../views/ImagePicker/ImagePicker';
+import Loading from '../views/Loading/Loading';
 const Stack = createNativeStackNavigator();
 
 const Index = () => {
@@ -111,6 +112,11 @@ const Index = () => {
       <Stack.Screen
         name="ImagePickerComponent"
         component={ImagePickerComponent}
+        screenOptions={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Loading"
+        component={Loading}
         screenOptions={{headerShown: false}}
       />
     </Stack.Navigator>

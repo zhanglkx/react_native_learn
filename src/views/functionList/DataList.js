@@ -71,6 +71,12 @@ const DataList = [
     router: 'ImagePickerComponent',
     desc: 'ImagePickerComponent component',
   },
+  {
+    name: 'Loading',
+    title: 'Loading',
+    router: 'Loading',
+    desc: 'Loading component',
+  },
 ];
 
 export default DataList;
