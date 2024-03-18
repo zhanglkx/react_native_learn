@@ -77,6 +77,12 @@ const DataList = [
     router: 'Loading',
     desc: 'Loading component',
   },
+  {
+    name: 'MaterialTopTabNavigator',
+    title: 'MaterialTopTabNavigator',
+    router: 'MaterialTopTabNavigator',
+    desc: 'MaterialTopTabNavigator component',
+  },
 ];
 
 export default DataList;
