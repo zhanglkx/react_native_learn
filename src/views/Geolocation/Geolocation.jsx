@@ -57,7 +57,7 @@
 // }
 
 // //const styles = StyleSheet.create({});
-import {View, Text, SafeAreaView, Button} from 'react-native';
+import {Text, SafeAreaView, Button} from 'react-native';
 import React, {useState} from 'react';
 import Geolocation from '@react-native-community/geolocation';
 export default function App() {

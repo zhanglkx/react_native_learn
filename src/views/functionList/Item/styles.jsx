@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   container: {
     width: Dimensions.get('window').width,
     height: 56,
-    backgroundColor: colorManager.themeColor,
+    backgroundColor: colorManager.themeBgColor,
     display: 'flex',
     flexWrap: 'wrap',
     flex: 1,
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width - 110,
     height: 30,
     marginLeft: 5,
-    backgroundColor: colorManager.themeColor,
+    backgroundColor: colorManager.themeBgColor,
   },
   subTitle: {
     width: Dimensions.get('window').width - 110,

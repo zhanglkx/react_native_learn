@@ -1,4 +1,4 @@
-import {View, Image, Text, TouchableOpacity, Alert} from 'react-native';
+import {View, Image, Text, TouchableWithoutFeedback, Alert} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
@@ -11,7 +11,7 @@ const FuncItem = props => {
   };
 
   return (
-    <TouchableOpacity
+    <TouchableWithoutFeedback
       style={styles.main}
       onPress={() => {
         clickItem(props.item.router);
@@ -31,7 +31,7 @@ const FuncItem = props => {
           style={styles.image}
         />
       </View>
-    </TouchableOpacity>
+    </TouchableWithoutFeedback>
   );
 };
 
